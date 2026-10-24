@@ -14,7 +14,7 @@ async function getStatus(threadId) {
     return (await response).data;
 }
 
-async function resumeWork(threadId, decision) {
+async function resumeWorkflow(threadId, decision) {
     const url = `${AI_SERVICE_URL}/workflow/resume`;
     const body = { thread_id: threadId, decision };
     const response = axios.post(url, body);
@@ -24,5 +24,5 @@ async function resumeWork(threadId, decision) {
 module.exports = {
 startWorkflow,
 getStatus,
-resumeWork
+resumeWorkflow
 }
